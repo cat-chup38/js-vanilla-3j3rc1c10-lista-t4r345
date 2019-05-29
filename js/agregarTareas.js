@@ -56,10 +56,9 @@
 
 
 
-
-        for (var i = 0; i <= conjuntos.length - 1; i++) {
-            conjuntos[i].addEventListener("click", eleminarTarea);
-            //console.log(conjuntos[i]);
+        for (var i = 0; i <= tareas.length - 1; i++) {
+            tareas[i].addEventListener("click", eleminarTarea);
+            //console.log(tareas[i]);
         }
     };
 
