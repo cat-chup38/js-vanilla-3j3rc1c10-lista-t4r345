@@ -1,5 +1,7 @@
 (function() {
+
     var agregar = function() {
+
         var texto1 = document.getElementById("texto1").value;
         var contenido = document.createTextNode(texto1);
 
@@ -15,14 +17,6 @@
         nuevo_nodo.setAttribute("class", "tarea");
 
         div1.appendChild(nuevo_nodo);
-
-
-
-        var tareas = document.getElementsByName("subcontenedor1");
-        var referencia = tareas[0];
-
-        var padre = document.getElementById("contenedor1");
-        padre.insertBefore(div1, referencia);
 
 
 
@@ -46,45 +40,48 @@
         div2.appendChild(botonBajar);
 
 
-        var botones = document.getElementsByName("subcontenedor1");
-        var referencia2 = botones[1];
-
-        var padreBotones = document.getElementById("contenedor1");
-        padreBotones.insertBefore(div2, referencia2);
-
-
-
         // agregar los dos div al div conjunto
 
         var div3 = document.createElement("div");
         div3.setAttribute("name", "conjunto");
 
-        console.log(padre)
+        div3.appendChild(div1);
+        div3.appendChild(div2);
+
+
+        var conjuntos = document.getElementsByName("conjunto");
+        var referencia3 = conjuntos[0];
+        var padre2 = document.getElementById("contenedor1");
+        padre2.insertBefore(div3, referencia3);
 
 
 
 
-
-
-        for (var i = 0; i <= seccion.length - 1; i++) {
-            seccion[i].addEventListener("click", eleminarTarea);
-            console.log(seccion[i]);
+        for (var i = 0; i <= conjuntos.length - 1; i++) {
+            conjuntos[i].addEventListener("click", eleminarTarea);
+            //console.log(conjuntos[i]);
         }
     };
 
+
+
     var eleminarTarea = function() {
-        this.parentNode.removeChild(this);
+        subcontenedor1 = this.parentNode;
+        conjunto = subcontenedor1.parentNode
+        conjunto.parentNode.removeChild(conjunto);
     };
+
 
     var boton1 = document.getElementById("boton1");
     boton1.addEventListener("click", agregar);
 
-    var seccion = document.getElementsByName("subcontenedor1");
-    //console.log(seccion.length);
 
-    for (var i = 0; i <= seccion.length - 1; i++) {
-        seccion[i].addEventListener("click", eleminarTarea);
-        console.log(seccion[i]);
+    //var conjuntos = document.getElementsByName("conjunto");
+    var tareas = document.getElementsByName("tareas1");
+
+    for (var i = 0; i <= tareas.length - 1; i++) {
+        tareas[i].addEventListener("click", eleminarTarea);
+        //console.log(tareas[i]);
     }
 
 

@@ -35,18 +35,18 @@ body {
 .contenedor .tarea li a {
     color: #212121;
     display: block;
-    padding: 20px 0;
+    padding: 600px 0;
     text-decoration: none;
 }
 
 .subcontenedor1 {
     float: left;
     width: 20%;
-    outline: red solid thin;
+    /*outline: red solid thin;*/
 }
 
 .subcontenedor2 {
     float: left;
     width: 80%;
-    outline: green solid thin;
+    /*outline: green solid thin;*/
 }
