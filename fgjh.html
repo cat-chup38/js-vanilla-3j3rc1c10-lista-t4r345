@@ -1,0 +1,40 @@
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title>Permutar elementos de una lista</title>
+<script type="text/javascript">
+<!--
+function arriba() {
+    obj=document.getElementById('sel');
+    indice=obj.selectedIndex;
+    if (indice>0) cambiar(obj,indice,indice-1);
+}
+function abajo() {
+    obj=document.getElementById('sel');
+    indice=obj.selectedIndex;
+    if (indice!=-1 && indice<obj.length-1)
+        cambiar(obj,indice,indice+1);
+}
+function cambiar(obj,num1,num2) {
+    proVal=obj.options[num1].value;
+    proTex=obj.options[num1].text;
+    obj.options[num1].value=obj.options[num2].value;    
+    obj.options[num1].text=obj.options[num2].text;  
+    obj.options[num2].value=proVal;
+    obj.options[num2].text=proTex;
+  obj.selectedIndex=num2;
+}
+-->
+</script>
+ 
+ 
+ 
+<p>
+<label for="sel">Opciones:</label>
+<select id="sel" size="5">
+<option value="1">Uno</option>
+<option value="2">Dos</option>
+<option value="3">Tres</option>
+<option value="4">Cuatro</option>
+<option value="5">Cinco</option>
+</select>
+<input type="button" value="Arriba" onclick="arriba()">
+<input type="button" value="Abajo" onclick="abajo()"></p>
