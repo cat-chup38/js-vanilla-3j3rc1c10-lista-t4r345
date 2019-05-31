@@ -132,16 +132,8 @@
             console.log("ultimmmmmmmmmo");
         }
 
-
-
-
-
-
-
         padre.insertBefore(conjunto, siguiente);
 
-        //console.log(siguiente);
-        //console.log(padre);
     }
 
 
