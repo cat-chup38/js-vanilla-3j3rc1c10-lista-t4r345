@@ -1,0 +1,19 @@
+<div id="info">
+    <h2>Coordenadas página:<div id="pagina"></div></h2>
+    <h2>Coordenadas pantalla:<div id="pantalla"></div></h2>
+</div>
+<script>
+function informacion(elEvento){
+    var evento = elEvento;
+    var coordenadaX = evento.clientX;
+    var coordenadaY = evento.clientY;
+    var coordenadaXp = evento.screenX;
+    var coordenadaYp = evento.screenY;
+    pagina.innerHTML = "[" + coordenadaX + "-" + coordenadaY + "]";
+    pantalla.innerHTML = "[" + coordenadaXp + "-" + coordenadaYp + "]";
+}
+ 
+window.onload = function(){
+    document.onmousemove = informacion;
+}
+</script>
